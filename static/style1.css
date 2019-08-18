@@ -1,0 +1,37 @@
+body {
+  background-color: white;
+  /* Set margin to 0 pixels on all sides */
+  margin: 0px;
+
+  /* Set font family to be Helvetica or Arial */
+ font-family: Helvetica, Arial, sans-serif;
+
+  /* Set line height to be 1.5 times larger than default */
+  line-height: 1.5;
+}
+
+header {
+  /* Set text alignment to center */
+  text-align: center;
+
+}
+
+h1 {
+  /* Set border along bottom to be a black solid line 5 pixels thick */
+  text-align: center;
+}
+
+p {
+  /* Set font color to be the hex code 666666 */
+ color: blue;
+ text-align: center;
+}
+
+img {
+  /* Set max width to be 100% of the containing element */
+ max-width: 100%;
+}
+
+.center {
+  align-content: center;
+}

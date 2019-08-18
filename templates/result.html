@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="static/style2.css">
+ </head>
+  <body>
+    <header>
+      <h1>
+      <a href="https://fontmeme.com/pokemon-font/"><img src="https://fontmeme.com/permalink/190724/e3deaa0fdbd658717efd65e92784f6dd.png" alt="pokemon-font" border="0"></a>
+      <p>{{ pred }}</p>
+    </h1>
+    </header>
+    <h2>
+      <img src= {{url}} alt="error" class ="center">
+    </h2>
+    <iframe src="static/winner.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+    <audio id='player' autoplay loop>
+    	<source src = "static/winner.mp3" type="audio/mp3">
+    </audio>
+    <button class = 'loop' onclick="goBack()">New Battle</button>
+  <script>
+  function goBack() {
+    window.history.back();
+  }
+  </script>
+    </body>
+  </html>

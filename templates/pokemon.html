@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Pokemon Battle</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="static/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/util.css">
+	<link rel="stylesheet" type="text/css" href="static/main.css">
+<!--===============================================================================================-->
+
+<iframe src="static/battle.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+<audio id='player' autoplay loop>
+	<source src = "static/battle.mp3" type="audio/mp3">
+</audio>
+</head>
+<body>
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" action = "/result" method = "POST">
+				<span class="contact100-form-title">
+					<a href="https://fontmeme.com/pokemon-font/"><img src="https://fontmeme.com/permalink/190724/fce001e9a95bcc7f7ce9af01c01c0fbc.png" alt="pokemon-font" border="0"></a>
+				</span>
+
+
+
+				<div class="wrap-input100">
+					<div class="label-input100">I CHOOSE YOU</div>
+					<div>
+						<select class="js-select2" name="player 1">
+							{% for i in name %}
+							<option value = {{i}}>{{i}}</option>
+							{% endfor %}
+						</select>
+						<div class="dropDownSelect2"></div>
+					</div>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100">
+					<div class="label-input100">CHALLENGER CHOOSES</div>
+					<div>
+
+						<select class="js-select2" name="challenger">
+							{% for i in name %}
+							<option value = {{i}}>{{i}}</option>
+							{% endfor %}
+							</select>
+
+						<div class="dropDownSelect2"></div>
+					</div>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn">
+						BATTLE
+					</button>
+				</div>
+			</form>
+
+			<div class="contact100-more flex-col-c-m" style="background-image: url('static/pokemon.jpg');">
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+<!--===============================================================================================-->
+	<script src="static/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/popper.js"></script>
+	<script src="static/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/select2.min.js"></script>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+		})
+		$(".js-select2").each(function(){
+			$(this).on('select2:open', function (e){
+				$(this).parent().next().addClass('eff-focus-selection');
+			});
+		});
+		$(".js-select2").each(function(){
+			$(this).on('select2:close', function (e){
+				$(this).parent().next().removeClass('eff-focus-selection');
+			});
+		});
+
+	</script>
+<!--===============================================================================================-->
+	<script src="static/moment.min.js"></script>
+	<script src="static/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="static/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="static/main.js"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-23581568-13');
+	</script>
+
+</body>
+</html>
